@@ -1,0 +1,211 @@
+ @import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;800;900&display=swap);
+ *,
+ *::after,
+ *::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     list-style: none;
+ }
+ 
+ body {
+     font-family: 'Public Sans', sans-serif;
+ }
+ /* From Uiverse.io by Z4drus */
+ 
+ .button-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     column-gap: 30px;
+     margin: 20px;
+ }
+ 
+ .button-3d {
+     -webkit-appearance: none;
+     appearance: none;
+     position: relative;
+     border-width: 0;
+     padding: 0 8px;
+     min-width: 4em;
+     min-height: 4em;
+     box-sizing: border-box;
+     background: transparent;
+     font: inherit;
+     cursor: pointer;
+     margin: 10px;
+     border-radius: 20px;
+ }
+ 
+ .button-top {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     z-index: 2;
+     padding: 8px 16px;
+     transform: translateY(0);
+     color: #fff;
+     background-image: linear-gradient(145deg, #6a11cb, #2575fc);
+     text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+     border-radius: 20px;
+     transition: transform 0.3s, border-radius 0.3s, background 10s;
+ }
+ 
+ .button-3d:active .button-top {
+     border-radius: 10px 10px 8px 8px / 8px;
+     transform: translateY(2px);
+     background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+ }
+ 
+ .button-bottom {
+     position: absolute;
+     z-index: 1;
+     bottom: 4px;
+     left: 4px;
+     border-radius: 20px;
+     padding-top: 6px;
+     width: calc(100% - 8px);
+     height: calc(100% - 10px);
+     background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+     transition: border-radius 0.2s, padding-top 0.2s;
+ }
+ 
+ .button-base {
+     position: absolute;
+     z-index: 0;
+     top: 4px;
+     left: 0;
+     border-radius: 20px;
+     width: 100%;
+     height: calc(100% - 4px);
+     background-color: rgba(0, 0, 0, 0.15);
+     box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.75), inset 0 2px 2px rgba(0, 0, 0, 0.25);
+     transition: border-radius 0.2s, padding-top 0.2s;
+ }
+ 
+ .button-3d:active .button-bottom {
+     border-radius: 10px 10px 8px 8px / 8px;
+     padding-top: 0;
+ }
+ 
+ .button-3d:active .button-base {
+     border-radius: 10px 10px 8px 8px / 8px;
+ }
+ 
+ .sun,
+ .moon {
+     font-size: 25px;
+     padding: 50px;
+     color: black;
+ }
+ 
+ .sun {
+     display: none;
+ }
+ /* From Uiverse.io by andrew-demchenk0 */
+ 
+ .switch {
+     font-size: 17px;
+     position: relative;
+     display: inline-block;
+     width: 64px;
+     height: 34px;
+ }
+ 
+ .switch input {
+     opacity: 0;
+     width: 0;
+     height: 0;
+ }
+ 
+ .slider {
+     position: absolute;
+     cursor: pointer;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #73C0FC;
+     transition: .4s;
+     border-radius: 30px;
+ }
+ 
+ .slider:before {
+     position: absolute;
+     content: "";
+     height: 30px;
+     width: 30px;
+     border-radius: 20px;
+     left: 2px;
+     bottom: 2px;
+     z-index: 2;
+     background-color: #e8e8e8;
+     transition: .4s;
+ }
+ 
+ .sun svg {
+     position: absolute;
+     top: 6px;
+     left: 36px;
+     z-index: 1;
+     width: 24px;
+     height: 24px;
+ }
+ 
+ .moon svg {
+     fill: #73C0FC;
+     position: absolute;
+     top: 5px;
+     left: 5px;
+     z-index: 1;
+     width: 24px;
+     height: 24px;
+ }
+ /* .switch:hover */
+ 
+ .sun svg {
+     animation: rotate 15s linear infinite;
+ }
+ 
+ @keyframes rotate {
+     0% {
+         transform: rotate(0);
+     }
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+ /* .switch:hover */
+ 
+ .moon svg {
+     animation: tilt 5s linear infinite;
+ }
+ 
+ @keyframes tilt {
+     0% {
+         transform: rotate(0deg);
+     }
+     25% {
+         transform: rotate(-10deg);
+     }
+     75% {
+         transform: rotate(10deg);
+     }
+     100% {
+         transform: rotate(0deg);
+     }
+ }
+ 
+ .input:checked+.slider {
+     background-color: #183153;
+ }
+ 
+ .input:focus+.slider {
+     box-shadow: 0 0 1px #183153;
+ }
+ 
+ .input:checked+.slider:before {
+     transform: translateX(30px);
+ }
